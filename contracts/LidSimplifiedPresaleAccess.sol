@@ -34,6 +34,6 @@ contract LidSimplifiedPresaleAccess is Initializable {
             i++;
             stake2 = cutoffs[i];
         }
-        return startTime.add(i.add(1).mul(3 minutes));
+        return startTime.add(i.mul(3 minutes));
     }
 }

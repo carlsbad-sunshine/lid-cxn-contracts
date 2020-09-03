@@ -1407,6 +1407,10 @@ contract LidSimplifiedPresale is Initializable, Ownable, ReentrancyGuard, Pausab
         uniswapEthBP = bp;
     }
 
+    function updateHardcap(uint value) external onlyOwner {
+        hardcap = value;
+    }
+
     function deposit(address payable referrer) public payable whenPresaleActive nonReentrant whenNotPaused {
         require(now >= access.getAccessTime(msg.sender, timer.startTime()), "Time must be at least access time.");
         uint endTime = timer.updateEndTime();
